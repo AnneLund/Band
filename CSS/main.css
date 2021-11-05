@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Fruktur&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html body {
+  max-width: 1920px;
+  background-color: rgba(117, 117, 117, 0.376);
+}
+html body header {
+  max-width: 1630px;
+  margin: auto auto;
+}
+html body header #concert {
+  height: 60vh;
+  perspective: 1px;
+  transform: translateZ(-1px);
+  overflow-x: hidden;
+  overflow-y: visible;
+  width: 100%;
+  background: url("../images/concert.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin: 30px 0;
+}
+html body header h1 {
+  font-family: "Fruktur", cursive;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 9vw;
+  text-align: center;
+  width: 100%;
+  transform: translateZ(-1px);
+}
+html body header .main-nav {
+  margin: 0 18vw;
+  display: flex;
+  height: 20vh;
+  justify-content: space-between;
+  align-items: center;
+  color: #daf8e3;
+  overflow: hidden;
+}
+html body header .main-nav .logo {
+  width: 116px;
+  padding: 7px;
+}
+html body header .main-nav .logo:hover {
+  transition: 500ms;
+  transform: rotateZ(360deg);
+}
+html body header .main-nav .nav-links {
+  display: flex;
+  gap: 6vw;
+}
+html body header .main-nav .nav-links li {
+  padding: 0;
+}
+html body header .main-nav .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px;
+  font-family: "Acme", sans-serif;
+  font-size: 30px;
+}
+html body header .main-nav .nav-links li a:hover {
+  background-color: rgba(49, 44, 44, 0.103);
+  transition: ease-in-out 300ms;
+}
+@media screen and (max-width: 800px) {
+  html body header #concert {
+    height: 60vh;
+    perspective: 1px;
+    transform: translateZ(-1px);
+    overflow-x: visible;
+    overflow-y: visible;
+    width: 100%;
+    background: url("../images/concert.jpg") no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    margin: 30px 0;
+  }
+  html body header h1 {
+    font-size: 11vw;
+    transform: translateZ(0);
+    padding-top: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  html body #concert {
+    height: 10vh;
+  }
+}
+html body .burger {
+  display: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+html body .line {
+  height: 2px;
+  width: 35px;
+  margin: 9px 10px;
+  background: #daf8e3;
+  transition: transform 0.75s ease, opacity 0.75s ease;
+}
+html body .main-nav.show .line1 {
+  transform: translate(-10px) rotate(45deg) translate(15px);
+}
+html body .main-nav.show .line2 {
+  opacity: 0;
+}
+html body .main-nav.show .line3 {
+  transform: translate(-10px) rotate(-45deg) translate(15px);
+}
+html body .main-nav.show .nav-links {
+  transform: translateX(0%);
+}
+@media screen and (max-width: 800px) {
+  html body .burger {
+    display: block;
+  }
+  html body h1 {
+    font-size: 15vw;
+  }
+  html body .nav-links {
+    position: fixed;
+    right: 0;
+    top: 40vh;
+    height: 20vh;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.459);
+    transform: translateX(100%);
+    transition: transform 1s ease;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+@media screen and (max-width: 400px) {
+  html body .nav-links {
+    position: fixed;
+    top: 30vh;
+    right: 0;
+    height: 20vh;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 1s ease;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+html body #middle-bg {
+  background: url("../images/music.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin: 30px 0;
+}
+html body #last-bg {
+  background: url("../images/music2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin: 30px 0;
+}
+html body #middle-bg,
+html body #last-bg {
+  max-width: 1630px;
+  margin: auto auto;
+  height: 60vh;
+  perspective: 1px;
+  transform: translateZ(-1px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
+html body #middle-bg h2,
+html body #last-bg h2 {
+  font-family: "Fruktur", cursive;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 3vw;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.459);
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+  transform: translateZ(-2px);
+}
+html body #middle-bg h3,
+html body #last-bg h3 {
+  color: white;
+  font-size: 40px;
+  text-decoration: underline;
+  font-weight: 400;
+  font-family: "Acme", sans-serif;
+  text-align: center;
+  padding-top: 70px;
+}
+@media screen and (max-width: 800px) {
+  html body #middle-bg h2,
+html body #last-bg h2 {
+    font-size: 5vw;
+  }
+  html body #middle-bg h3,
+html body #last-bg h3 {
+    padding: 20px 0;
+  }
+  html body #middle-bg p,
+html body #last-bg p {
+    padding: 0;
+  }
+}
+html body .text {
+  max-width: 1630px;
+  margin: auto auto;
+}
+html body .text .col-3 {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+html body .text p {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Acme", sans-serif;
+  width: 70%;
+  padding: 10px 90px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.4;
+}
+html body .text h3 {
+  color: white;
+  font-size: 40px;
+  text-decoration: underline;
+  font-weight: 400;
+  font-family: "Acme", sans-serif;
+  text-align: center;
+}
+html body .text form {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Acme", sans-serif;
+  font-size: 20px;
+}
+html body p {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Acme", sans-serif;
+  width: 70%;
+  padding: 10px 90px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.4;
+}
+html body h3 {
+  color: white;
+  font-size: 40px;
+  text-decoration: underline;
+  font-weight: 400;
+  font-family: "Acme", sans-serif;
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  html body p {
+    padding: 0;
+  }
+}
+html body footer {
+  max-width: 1630px;
+  background-color: rgba(255, 255, 255, 0.87);
+  height: 10vh;
+  width: 100%;
+  margin: auto auto;
+}
+html body footer ul {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 35px;
+  font-family: "Acme", sans-serif;
+}
+html body footer ul li {
+  color: black;
+  font-size: 20px;
+}
+@media screen and (max-width: 800px) {
+  html body footer ul {
+    padding: 0;
+  }
+}/*# sourceMappingURL=main.css.map */
